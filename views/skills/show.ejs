@@ -4,16 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Developer Skills</title>
+    <title>Developer Skill</title>
 </head>
 <body>
-    <h1>Developer Skills</h1>
-    <ul>
-        <% skills.forEach(function(s) { %>
-        <li>
-            <a href="skills/<%= s.id %>"><%= s.skill%></a>
-        </li>
-        <% }); %>
-    </ul>
+    <h3><%= skill.skill %></h3>
+    <h3>Status: <%= skill.status %></h3>
 </body>
 </html>
