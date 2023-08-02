@@ -11,6 +11,9 @@ router.get('/', skillsCtrl.index)
 
 router.get('/new', skillsCtrl.new)
 
+// GET /edit 
+// router.get('/edit', skillsCtrl.edit)
+
 // POST /skills/
 router.post('/', skillsCtrl.create)
 
