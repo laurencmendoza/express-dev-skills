@@ -9,6 +9,13 @@ const skillsCtrl = require('../controllers/skills')
 // GET /skills
 router.get('/', skillsCtrl.index)
 
+router.get('/new', skillsCtrl.new)
+
+// POST /skills/
+router.post('/', skillsCtrl.create)
+
+router.delete('/:id', skillsCtrl.delete)
+
 // GET /skills/:id
 router.get('/:id', skillsCtrl.show)
 

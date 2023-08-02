@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var methodOverride = require('method-override')
+
 var indexRouter = require('./routes/index');
 var skillsRouter = require('./routes/skills');
 
@@ -18,6 +20,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
+
+app.use(function(req,res,next) {
+  console.log('SEI Rocks!')
+  res.locals.time = new Date().toLocaleTimeString()
+  next()
+})
 
 app.use('/', indexRouter);
 app.use('/skills', skillsRouter);
@@ -35,7 +44,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {title: 'Error: 404'});
 });
 
 module.exports = app;
