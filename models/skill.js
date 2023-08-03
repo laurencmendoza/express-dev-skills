@@ -12,7 +12,8 @@ module.exports = {
     getAll,
     getOne, 
     create, 
-    deleteOne
+    deleteOne, 
+    update
 }
 
 function getAll() {
@@ -25,10 +26,9 @@ function getOne(id) {
 }
 
 function create(skill) {
-    skill.id = Date.now() % 10000
-    console.log(skill.id)
-    skill.status = 'aware'
-    skills.push(skill)
+    const newSkill = {...skill}
+    newSkill.id = Date.now() % 10000
+    skills.push(newSkill)
 }
 
 function deleteOne(id) {
@@ -37,4 +37,11 @@ function deleteOne(id) {
         return skill.id === id
     })
     skills.splice(idx, 1)
+}
+
+function update(id, data) {
+    let index = skills.findIndex(s => s.id == id)
+    let updatedSkill = {...skills[index], ...data}
+    console.log("updated skill", updatedSkill)
+    skills.splice(index, 1, updatedSkill)
 }
