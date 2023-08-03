@@ -18,7 +18,7 @@ function index(req,res) {
 function show(req,res) {
     const ctrlObject = {
         // title: Skill.getOne(req.params.id).skill,
-        title: 'Show Skill',
+        title: Skill.getOne(req.params.id).skill,
         skill: Skill.getOne(req.params.id)
     }
     res.render('skills/show', ctrlObject)

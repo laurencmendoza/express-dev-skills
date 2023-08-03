@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(245,245,245)
 }
 
 a {
@@ -16,14 +17,22 @@ input {
   margin: 10px 0 0 0;
 }
 
-.delete-form button {
-  color: red;
+li {
+  margin: 10px
+}
+
+nav {
+  margin: 0 0 15px 0;
 }
 
 form {
-  display: inline
+  display: inline; 
 }
 
-li {
-  margin: 10px
+.btn-outline-danger {
+  margin: 0 0 0 10px;
+}
+
+a, p {
+  font-size: 18px;
 }
